@@ -6,13 +6,13 @@ import sys
 
 
 # The Godfather
-# url = 'https://www.imdb.com/title/tt0068646/'
+url = 'https://www.imdb.com/title/tt0068646/'
 
 # Avengers : Endgame
 # url = 'https://www.imdb.com/title/tt4154796/'
 
 # Comment the below line if you want to use the above urls to fetch data.
-url = sys.argv[1]
+# url = sys.argv[1]
 
 # Get content on the wesite by posting request.
 response = requests.get(url, timeout = 5)
@@ -69,6 +69,8 @@ movieJson['summary'] = movie_summary_text
 movieJson['director'] = movie_director_name
 movieJson['writers'] = movie_writer_names
 movieJson['stars'] = movie_star_names
+movieJson['poster_src'] = movie_poster_url
+
 
 # Note: r+ mode appends data in front of the old data 
 with open('movies.json', 'r+') as f:
